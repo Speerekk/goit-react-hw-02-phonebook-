@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './ContactItem.module.css';
 
 const ContactItem = ({ contact }) => {
-  return <li>{contact.name}</li>;
+  return <li className={styles.item}>{contact.name}</li>;
 };
 
 ContactItem.propTypes = {

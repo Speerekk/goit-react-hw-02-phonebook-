@@ -3,6 +3,7 @@ import { nanoid } from 'nanoid';
 import ContactForm from './components/ContactForm/ContactForm';
 import ContactList from './components/ContactList/ContactList';
 import Filter from './components/Filter/Filter';
+import styles from './App.module.css';
 
 const App = () => {
   const [contacts, setContacts] = useState([
@@ -57,8 +58,8 @@ const App = () => {
   );
 
   return (
-    <div>
-      <h1>Phonebook</h1>
+    <div className={styles.container}>
+      <h1 className={styles.heading}>Phonebook</h1>
 
       <ContactForm
         name={name}
@@ -68,7 +69,7 @@ const App = () => {
         onSubmit={handleAddContact}
       />
 
-      <h2>Contacts</h2>
+      <h2 className={styles.subheading}>Contacts</h2>
 
       <Filter
         value={filter}
