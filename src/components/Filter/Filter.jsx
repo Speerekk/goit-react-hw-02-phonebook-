@@ -1,20 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from './Filer.module.css';
 
-const Filter = ({ value, onChange }) => {
-  return (
-    <label className={styles.label}>
-      Find contacts by name:
-      <input
-        className={styles.input}
-        type="text"
-        value={value}
-        onChange={onChange}
-      />
-    </label>
-  );
-};
+class Filter extends Component {
+  render() {
+    const { value, onChange } = this.props;
+
+    return (
+      <label>
+        Find contacts by name:
+        <input type="text" value={value} onChange={onChange} />
+      </label>
+    );
+  }
+}
 
 Filter.propTypes = {
   value: PropTypes.string.isRequired,
